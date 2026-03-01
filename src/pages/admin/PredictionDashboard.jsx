@@ -21,6 +21,12 @@ const factors = [
   { factor: 'Cultural Event', impact: '-22%', direction: 'down' },
 ];
 
+const compareData = predictionData.map((d, idx) => ({
+  day: d.day,
+  Predicted: d.predictedLunch,
+  Actual: idx < 3 ? Math.floor(d.predictedLunch * (0.92 + (idx * 0.04))) : null,
+}));
+
 export default function PredictionDashboard() {
   const chartData = predictionData.map(d => ({
     day: d.day,
@@ -29,12 +35,6 @@ export default function PredictionDashboard() {
     Dinner: d.predictedDinner,
     Low: d.confidenceLow,
     High: d.confidenceHigh,
-  }));
-
-  const compareData = predictionData.map((d, i) => ({
-    day: d.day,
-    Predicted: d.predictedLunch,
-    Actual: i < 3 ? Math.floor(d.predictedLunch * (0.92 + Math.random() * 0.12)) : null,
   }));
 
   return (
@@ -133,7 +133,7 @@ export default function PredictionDashboard() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-50">
-                {predictionData.map((d, i) => (
+                {predictionData.map((d) => (
                   <tr key={d.date} className="hover:bg-gray-50">
                     <td className="px-4 py-3 text-gray-700">{d.date}</td>
                     <td className="px-4 py-3 font-medium text-gray-800">{d.day}</td>

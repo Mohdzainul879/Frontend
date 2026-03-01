@@ -59,7 +59,6 @@ const getDatePlus = (days) => {
 };
 
 const mealTypes = ['Breakfast', 'Lunch', 'Dinner'];
-const statuses = ['Attended', 'Missed', 'Cancelled', 'Upcoming'];
 
 export const mockBookings = [
   ...Array.from({ length: 30 }, (_, i) => ({

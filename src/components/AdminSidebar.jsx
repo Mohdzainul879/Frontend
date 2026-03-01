@@ -59,7 +59,7 @@ export default function AdminSidebar() {
       )}
 
       <nav className="flex-1 py-4">
-        {sidebarLinks.map(({ to, label, icon: Icon }) => (
+        {sidebarLinks.map(({ to, label, icon }) => (
           <Link
             key={to}
             to={to}
@@ -69,7 +69,7 @@ export default function AdminSidebar() {
                 ? 'bg-indigo-700 text-white border-r-2 border-indigo-400'
                 : 'text-slate-300 hover:bg-slate-800 hover:text-white'}`}
           >
-            <Icon size={18} className="shrink-0" />
+            {icon({ size: 18, className: 'shrink-0' })}
             {!collapsed && label}
           </Link>
         ))}

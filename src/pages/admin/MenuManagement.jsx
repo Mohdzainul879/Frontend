@@ -23,7 +23,7 @@ function getWeekDates() {
 }
 
 export default function MenuManagement() {
-  const { menus, addMenu, updateMenu, getMenuByDate } = useMenu();
+  const { addMenu, updateMenu, getMenuByDate } = useMenu();
   const [modalOpen, setModalOpen] = useState(false);
   const [editing, setEditing] = useState(null);
   const [form, setForm] = useState({ date: '', mealType: 'Lunch', items: '', timing: '' });

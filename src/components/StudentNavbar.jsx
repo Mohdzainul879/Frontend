@@ -38,7 +38,7 @@ export default function StudentNavbar() {
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-1">
-            {navLinks.map(({ to, label, icon: Icon }) => (
+            {navLinks.map(({ to, label, icon }) => (
               <Link
                 key={to}
                 to={to}
@@ -47,7 +47,7 @@ export default function StudentNavbar() {
                     ? 'bg-emerald-900 text-white'
                     : 'text-emerald-100 hover:bg-emerald-600 hover:text-white'}`}
               >
-                <Icon size={16} />
+                {icon({ size: 16 })}
                 {label}
               </Link>
             ))}
@@ -82,7 +82,7 @@ export default function StudentNavbar() {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden bg-emerald-800 px-4 pb-4">
-          {navLinks.map(({ to, label, icon: Icon }) => (
+          {navLinks.map(({ to, label, icon }) => (
             <Link
               key={to}
               to={to}
@@ -92,7 +92,7 @@ export default function StudentNavbar() {
                   ? 'bg-emerald-900 text-white'
                   : 'text-emerald-100 hover:bg-emerald-700 hover:text-white'}`}
             >
-              <Icon size={16} />
+              {icon({ size: 16 })}
               {label}
             </Link>
           ))}
