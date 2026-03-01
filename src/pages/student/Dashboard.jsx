@@ -34,8 +34,9 @@ export default function Dashboard() {
   const navigate = useNavigate();
 
   const today = new Date().toISOString().split('T')[0];
-  const todayBookings = bookings.filter(b => b.studentId === 1 && b.date === today);
-  const allStudentBookings = bookings.filter(b => b.studentId === 1);
+  const studentId = user?.id;
+  const todayBookings = bookings.filter(b => b.studentId === studentId && b.date === today);
+  const allStudentBookings = bookings.filter(b => b.studentId === studentId);
 
   const todayMealStatus = ['Breakfast', 'Lunch', 'Dinner'].map(meal => {
     const booking = todayBookings.find(b => b.mealType === meal);
@@ -43,7 +44,7 @@ export default function Dashboard() {
   });
 
   const upcomingMeals = bookings
-    .filter(b => b.studentId === 1 && b.status === 'Upcoming')
+    .filter(b => b.studentId === studentId && b.status === 'Upcoming')
     .slice(0, 5);
 
   const todayMenu = getMenuByDate(today);
