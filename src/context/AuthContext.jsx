@@ -11,6 +11,8 @@ export function AuthProvider({ children }) {
     if (stored) setUser(JSON.parse(stored));
   }, []);
 
+  // NOTE: Plain text password comparison is used here for demo purposes ONLY.
+  // Production code must use secure password hashing (e.g., bcrypt) on the server side.
   const login = (email, password) => {
     if (email === adminUser.email && password === adminUser.password) {
       const u = { ...adminUser, isAdmin: true };

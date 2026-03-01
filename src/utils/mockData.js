@@ -1,4 +1,6 @@
 // Mock data for Campus Food Intelligence System
+// NOTE: Passwords stored in plain text for demo/mock purposes ONLY.
+// Production implementations must use secure password hashing (e.g., bcrypt).
 
 export const adminUser = {
   id: 0,
