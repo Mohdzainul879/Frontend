@@ -3,15 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "packageManager": "npm@10",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "scripts": {
-  "build": "vite build"
-},
   "dependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
